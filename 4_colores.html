@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>4 colores</title></head><body>
+<div id="blue" style="width:200px;height:200px;background:blue;"></div>
+<div id="red" style="width:200px;height:200px;background:red;"></div>
+<div id="green" style="width:200px;height:200px;background:green;"></div>
+<div id="yellow" style="width:200px;height:200px;background:yellow;"></div>
+<div id="key" style="width:200px;height:200px;background:white;border:1px solid black;"></div>
+<script>
+function negro(el){el.style.backgroundColor="black";}
+["blue","red","green","yellow"].forEach(id=>{
+ const e=document.getElementById(id);
+ e.addEventListener("click",()=>negro(e));
+});
+let color="";
+const key=document.getElementById("key");
+document.addEventListener("keydown",function(event){
+ if(event.key==="a"){color="pink";key.style.backgroundColor=color;}
+ else if(event.key==="s"){color="orange";key.style.backgroundColor=color;}
+ else if(event.key==="d"){color="skyblue";key.style.backgroundColor=color;}
+ else if(event.key==="q"){crear("purple");}
+ else if(event.key==="w"){crear("gray");}
+ else if(event.key==="e"){crear("brown");}
+});
+function crear(c){
+ const d=document.createElement("div");
+ d.style.width="200px";d.style.height="200px";d.style.backgroundColor=c;
+ document.body.appendChild(d);
+}
+</script></body></html>
